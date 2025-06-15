@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GameCenter</title>
+</head>
+<body class="theme-dark">
+    <div class="container">
+        <header>
+            <h1>KP sexy</h1>
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </header>
+        <main>
+            <section class="content">
+                <h2>Welcome to the Homepage</h2>
+                <p>This is a sample website with a black theme and a sidebar on the right.</p>
+                <!-- KP list display -->
+                <div id="game-list"></div>
+            </section>
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content" id="sidebar-content">
+                    <h2>Pages</h2>
+                    <ul id="pages-list"></ul>
+                    <div id="admin-section" class="hidden">
+                        <h2>Admin Panel</h2>
+                        <form id="add-game-form">
+                            <input type="text" id="game-name" placeholder="Game Name" required>
+                            <input type="text" id="game-link" placeholder="Game Link" required>
+                            <button type="submit">Add Game</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        <footer>
+            <p>Copyright GameCenter &copy; 2023 - 2024 <a href="mailto:youremail@example.com?subject=Contact from GameCenter">Contact</a></p>
+        </footer>
+    </div>
+    <div class="close-overlay" id="close-overlay"></div>
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

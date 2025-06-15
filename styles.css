@@ -1,0 +1,279 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bodybgk);
+    color: var(--colorblacktowhite);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--topbgk);
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger-menu {
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--colorblacktowhite);
+    margin: 4px 0;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 270px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--topbgk);
+    position: fixed;
+    right: -270px;
+    top: 0;
+    transition: right 0.4s;
+    z-index: 888;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: var(--h2color);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: var(--colorblacktowhite);
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Закрытие по оверлею */
+.close-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 887;
+    display: none;
+}
+
+.close-overlay.active {
+    display: block;
+}
+
+/* Контент */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    background-color: var(--topbgk);
+    padding: 10px;
+    text-align: center;
+    color: var(--colorblacktowhite);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--colorblacktowhite);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Темная тема (CSS-переменные) */
+.theme-dark {
+    --active1: #2c7514;
+    --active: #353e4a;
+    --aboutwindowtxt: #cbc5bd;
+    --aboutwindowborder: rgb(55, 60, 63);
+    --aboutwindowbgk: #292f39;
+    --bodybgk: #191c21;
+    --colorblacktowhite: rgb(189, 189, 189);
+    --colortxtgray: rgb(237, 235, 232);
+    --hrcolor: #353d49;
+    --h1color: rgb(188, 182, 172);
+    --h2color: rgb(188, 108, 40);
+    --linkcolor: rgb(188, 182, 172);
+    --navbgk: #1e242c;
+    --navbrd: #39424f;
+    --searchbgk: #3c4554;
+    --searchbrd: rgb(115, 115, 115);
+    --scrollbar: #2b2b2b;
+    --scrollbarthumb: #555;
+    --topbgk: #000000;
+    --toptxtclr: #a9a9a9;
+}
+
+/* Скролл */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarthumb);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+}
+
+/* Логин и админ панель */
+#login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#login-box {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    color: white;
+    width: 300px;
+}
+
+#login-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+#login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--active1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-box button:hover {
+    background-color: #3ba12f;
+}
+
+#admin-section {
+    padding: 20px;
+}
+
+#admin-section.hidden {
+    display: none;
+}
+
+#admin-section h2 {
+    color: var(--h2color);
+}
+
+#game-list {
+    margin-top: 15px;
+}
+
+#game-list li {
+    padding: 5px 0;
+}
+
+/* Кнопки добавления */
+button {
+    background-color: var(--active);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--rightgreenbuttonshover2);
+}
